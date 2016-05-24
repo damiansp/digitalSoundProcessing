@@ -7,7 +7,9 @@ https://class.coursera.org/audio-002/lecture/preview and makes extensive use of
 the associated github repo found here:
 https://github.com/mtg/sms-tools
 
-Should you fork or use this code, please pass on the citation/credit for their
-original work.
+The original work that this repo began from is licensed under a GNU Affero
+General Public License. See the license in their repo for details.  Should you
+fork or use this code, please pass on the citation/credit for their original
+work.
 
 Thank you.  
