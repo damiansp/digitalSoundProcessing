@@ -15,7 +15,7 @@ except ImportError:
     print "Please refer to the README.md file in the 'sms-tools' directory,"
     print "for the instructions to compile the cython modules"
     print "Exiting the code!!"
-    print "---------------=---------------------------------------------------"
+    print "-------------------------------------------------------------------"
     print "\n"
     sys.exit(0)
 	
