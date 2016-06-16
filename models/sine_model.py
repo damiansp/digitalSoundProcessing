@@ -149,7 +149,7 @@ def sine_model_analysis(x,
     '''
     Analysis of a sound using the sinusoidal model with sine tracking       
     x: input array sound
-    w: analysis window, 
+    w: analysis window
     n: size of complex spectrum
     h: hop-size
     t: threshold in negative dB                                        
