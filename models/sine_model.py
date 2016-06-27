@@ -243,7 +243,7 @@ def sine_model_synthesis(t_freq, t_mag, t_phase, n, h, fs):
     sw = np.zeros(n)     # init synth window
     tw = triang(2 * h)   # triangular window
     sw[h_n - h : h_n + h] = tw # add triang window
-    bh = blackmanharris(n_s) # blackman-harris window
+    bh = blackmanharris(n)     # blackman-harris window
 
     # normalize windows
     bh = bh / sum(bh)
@@ -263,7 +263,7 @@ def sine_model_synthesis(t_freq, t_mag, t_phase, n, h, fs):
             y_t_phase += (np.pi * (last_y_t_freq + t_freq[l, :]) / fs) * h
             
         # generate sines in spectrum
-        Y = uf.genSpecSines(t_freq[l, :], t_mag[l, :], y_t_phase, n_s, fs)
+        Y = uf.genSpecSines(t_freq[l, :], t_mag[l, :], y_t_phase, n, fs)
         # save freq for phase propagation
         last_y_freq = t_freq[l, :]
         # bound freq inside 2pi
@@ -272,7 +272,7 @@ def sine_model_synthesis(t_freq, t_mag, t_phase, n, h, fs):
         yw = np.real(fftshift(ifft(Y)))
 
         # Overlap-add and apply synth window
-        y[p_out : p_out + n_s] += sw * yw
+        y[p_out : p_out + n] += sw * yw
         p_out += h
 
     # delete half of first window...
